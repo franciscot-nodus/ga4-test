@@ -1,15 +1,71 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-  <title>Segunda página</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prueba GTM - Segunda</title>
+
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5NH9CCTL');
+  </script>
+  <!-- End Google Tag Manager -->
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #ecfccb, #dcfce7);
+      color: #222;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 80px auto;
+      padding: 30px;
+      background: white;
+      border-radius: 18px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+    }
+
+    button {
+      border: none;
+      padding: 14px 28px;
+      border-radius: 10px;
+      font-size: 16px;
+      background: #2563eb;
+      color: white;
+      cursor: pointer;
+      transition: 0.25s;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+    }
+  </style>
 </head>
 <body>
-  <h1>Segunda página</h1>
 
-  <p>Esta página sirve para probar navegación.</p>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5NH9CCTL"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
-  <a href="index.html" id="btn-back">
-    <button>Volver al inicio</button>
-  </a>
+  <div class="container">
+    <h1>Segunda página</h1>
+    <p>Esta página sirve para probar navegación entre páginas.</p>
+
+    <a href="index.html" id="btn-back">
+      <button>Volver al inicio</button>
+    </a>
+  </div>
+
 </body>
 </html>
