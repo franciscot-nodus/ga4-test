@@ -1,28 +1,107 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-  <title>Prueba GTM - Home</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prueba GTM - Inicio</title>
+
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5NH9CCTL');
+  </script>
+  <!-- End Google Tag Manager -->
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #f3f4f6, #dbeafe);
+      color: #222;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 80px auto;
+      padding: 30px;
+      background: white;
+      border-radius: 18px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+    }
+
+    h1 {
+      margin-bottom: 30px;
+    }
+
+    button {
+      border: none;
+      padding: 14px 28px;
+      margin: 12px;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.25s;
+    }
+
+    #btn-random {
+      background: #2563eb;
+      color: white;
+    }
+
+    #btn-random:hover {
+      transform: translateY(-2px);
+    }
+
+    #btn-next button {
+      background: #16a34a;
+      color: white;
+    }
+
+    #resultado {
+      margin-top: 24px;
+      font-size: 18px;
+      font-weight: bold;
+      min-height: 30px;
+    }
+
+    .spacer {
+      height: 1600px;
+    }
+  </style>
 </head>
 <body>
-  <h1>Mi sitio de prueba GA4 + GTM</h1>
 
-  <button id="btn-random">Acción aleatoria</button>
-  <br><br>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5NH9CCTL"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
-  <a href="segunda.html" id="btn-next">
-    <button>Ir a segunda página</button>
-  </a>
+  <div class="container">
+    <h1>Entorno de prueba GA4 + GTM</h1>
 
-  <p id="resultado"></p>
+    <button id="btn-random">Ejecutar acción random</button>
 
-  <div style="height:1500px;"></div>
+    <a href="segunda.html" id="btn-next">
+      <button>Ir a segunda página</button>
+    </a>
+
+    <p id="resultado"></p>
+  </div>
+
+  <div class="spacer"></div>
 
   <script>
     document.getElementById("btn-random").addEventListener("click", function() {
       const acciones = [
-        "Se mostró un mensaje",
-        "Se cambió un texto",
-        "Se generó un número",
+        "Se mostró una alerta",
+        "Se cambió el contenido",
+        "Se generó un valor aleatorio",
         "Se ejecutó una acción random"
       ];
 
@@ -30,5 +109,6 @@
       document.getElementById("resultado").innerText = random;
     });
   </script>
+
 </body>
 </html>
