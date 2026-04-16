@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Prueba GTM - Home</title>
+</head>
+<body>
+  <h1>Mi sitio de prueba GA4 + GTM</h1>
+
+  <button id="btn-random">Acción aleatoria</button>
+  <br><br>
+
+  <a href="segunda.html" id="btn-next">
+    <button>Ir a segunda página</button>
+  </a>
+
+  <p id="resultado"></p>
+
+  <div style="height:1500px;"></div>
+
+  <script>
+    document.getElementById("btn-random").addEventListener("click", function() {
+      const acciones = [
+        "Se mostró un mensaje",
+        "Se cambió un texto",
+        "Se generó un número",
+        "Se ejecutó una acción random"
+      ];
+
+      const random = acciones[Math.floor(Math.random() * acciones.length)];
+      document.getElementById("resultado").innerText = random;
+    });
+  </script>
+</body>
+</html>
