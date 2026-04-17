@@ -2,113 +2,67 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Prueba GTM - Inicio</title>
-
-  <!-- Google Tag Manager -->
-  <script>
-    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-5NH9CCTL');
-  </script>
-  <!-- End Google Tag Manager -->
-
+  <title>Laboratorio Avanzado - Inicio</title>
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-5NH9CCTL');</script>
+  
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #f3f4f6, #dbeafe);
-      color: #222;
-      text-align: center;
-    }
-
-    .container {
-      max-width: 700px;
-      margin: 80px auto;
-      padding: 30px;
-      background: white;
-      border-radius: 18px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.12);
-    }
-
-    h1 {
-      margin-bottom: 30px;
-    }
-
-    button {
-      border: none;
-      padding: 14px 28px;
-      margin: 12px;
-      border-radius: 10px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: 0.25s;
-    }
-
-    #btn-random {
-      background: #2563eb;
-      color: white;
-    }
-
-    #btn-random:hover {
-      transform: translateY(-2px);
-    }
-
-    #btn-next button {
-      background: #16a34a;
-      color: white;
-    }
-
-    #resultado {
-      margin-top: 24px;
-      font-size: 18px;
-      font-weight: bold;
-      min-height: 30px;
-    }
-
-    .spacer {
-      height: 1600px;
-    }
+    body { font-family: sans-serif; text-align: center; background: #f0f2f5; margin: 0; padding: 0; }
+    .container { max-width: 800px; margin: auto; background: white; padding: 40px; }
+    .search-box { margin: 20px 0; padding: 20px; border: 2px dashed #ccc; }
+    input { padding: 10px; width: 60%; border-radius: 5px; border: 1px solid #ddd; }
+    .video-container { margin: 40px 0; background: #000; padding: 10px; }
+    .content-filler { height: 800px; background: linear-gradient(#fff, #e2e8f0); display: flex; align-items: center; justify-content: center; font-style: italic; color: #999; }
+    button { padding: 10px 20px; cursor: pointer; background: #2563eb; color: white; border: none; border-radius: 5px; }
   </style>
 </head>
 <body>
-
-  <!-- Google Tag Manager (noscript) -->
-  <noscript>
-    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5NH9CCTL"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe>
-  </noscript>
-  <!-- End Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5NH9CCTL" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <div class="container">
-    <h1>Entorno de prueba GA4 + GTM</h1>
+    <h1>Laboratorio de Medición Avanzada</h1>
+    
+    <div class="search-box">
+      <h3>Prueba de Buscador</h3>
+      <input type="text" id="input-busqueda" placeholder="Escribe algo y busca...">
+      <button id="btn-buscar">Buscar</button>
+      <p id="feedback-busqueda"></p>
+    </div>
 
-    <button id="btn-random">Ejecutar acción random</button>
+    <div class="video-container">
+      <h3>Video YouTube (Auto-trackeable)</h3>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ?enablejsapi=1" id="video-yt" frameborder="0" allowfullscreen></iframe>
+    </div>
 
-    <a href="segunda.html" id="btn-next">
-      <button>Ir a segunda página</button>
-    </a>
-
+    <button id="btn-random">Acción Aleatoria</button>
+    <a href="segunda.html" id="btn-next"><button style="background: #16a34a;">Ir a segunda página</button></a>
     <p id="resultado"></p>
+
+    <div class="content-filler">
+      <p>Baja para probar el rastreo de Scroll...</p>
+    </div>
+    
+    <h2 id="final-de-pagina">¡Llegaste al final!</h2>
   </div>
 
-  <div class="spacer"></div>
-
   <script>
-    document.getElementById("btn-random").addEventListener("click", function() {
-      const acciones = [
-        "Se mostró una alerta",
-        "Se cambió el contenido",
-        "Se generó un valor aleatorio",
-        "Se ejecutó una acción random"
-      ];
+    // Lógica Buscador
+    document.getElementById("btn-buscar").addEventListener("click", function() {
+      const query = document.getElementById("input-busqueda").value;
+      if(query) {
+        document.getElementById("feedback-busqueda").innerText = "Buscando: " + query;
+        // Aquí podrías disparar un dataLayer.push({ 'event': 'busqueda', 'termino': query });
+      }
+    });
 
-      const random = acciones[Math.floor(Math.random() * acciones.length)];
-      document.getElementById("resultado").innerText = random;
+    // Lógica Acción Random
+    document.getElementById("btn-random").addEventListener("click", function() {
+      const msg = ["Alerta", "Cambio", "Valor"].map(t => "Acción: " + t);
+      document.getElementById("resultado").innerText = msg[Math.floor(Math.random()*msg.length)];
     });
   </script>
-
 </body>
 </html>
