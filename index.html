@@ -93,22 +93,18 @@
   </div>
 
   <script>
-    function setAgencia(nombre) {
-        // 1. Mostrar el mensaje y ocultar los botones originales
-        document.getElementById('contenedor-agencias').classList.add('oculto');
-        document.getElementById('mensaje-confirmacion').style.display = 'block';
-        document.getElementById('nombre-agencia-final').innerText = nombre;
-        
-        // 2. Push al DataLayer para GTM
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({
-            'event': 'login_exitoso',
-            'agencia_usuario': nombre,
-            'user_id': 'U-' + Math.floor(Math.random() * 9000)
-        });
-
-        console.log("Agencia fijada: " + nombre);
-    }
+ function setAgencia(nombre) {
+    document.getElementById('contenedor-agencias').classList.add('oculto');
+    document.getElementById('mensaje-confirmacion').style.display = 'block';
+    document.getElementById('nombre-agencia-final').innerText = nombre;
+    
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+        'event': 'login_exitoso',
+        'agencia_usuario': nombre
+        // Eliminamos el user_id random para no fragmentar
+    });
+}
 
     // Lógica Buscador
     document.getElementById("btn-buscar").addEventListener("click", function() {
